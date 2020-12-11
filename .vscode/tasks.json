@@ -1,0 +1,41 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g3", // for debug
+                "ResistanceCoreServer/NetEngine/NetCore/TCPServerManage.cpp",
+                "ResistanceCoreServer/NetEngine/NetCore/DBConnectManage.cpp",
+                "ResistanceCoreServer/NetEngine/DataCore/Crypto.cpp",
+                "ResistanceCoreServer/NetEngine/DataCore/DataHubControl.cpp",
+                "ResistanceCoreServer/NetEngine/UserPoolCore/UserPoolManage.cpp",
+                "ResistanceCoreServer/NetEngine/ListenerCore/ListenerManage.cpp",
+                "ResistanceCoreServer/MainCore.cpp",
+                "ResistanceCoreServer/DestinationFuncPool.cpp",
+                "ResistanceCoreServer/ResistanceCoreServer.cpp",
+                "-I",
+                "/usr/include/mysql",
+                "-L",
+                "/usr/lib64/mysql",
+                "-l",
+                "mysqlclient",
+                "-pthread",
+                "-o",
+                "Build/ResistanceCoreServer2.0"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
